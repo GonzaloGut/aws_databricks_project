@@ -73,5 +73,5 @@ if __name__ == "__main__":
 
     obj = BronzeLayer()
     data = obj.ingest_data_api("https://raw.githubusercontent.com/anshlambagit/ApacheAirflow/refs/heads/main/bookings.csv")
-    obj.put_data_s3("awss3bucketansh","bronze/bookings.csv",data)
-    obj.put_data_s3_hook("awss3bucketansh","bronze_new/bookings.csv",data)
+    obj.put_data_s3("aws-s3-bucket-airflow","bronze/bookings.csv",data)
+    obj.put_data_s3_hook("aws-s3-bucket-airflow","bronze_new/bookings.csv",data)
