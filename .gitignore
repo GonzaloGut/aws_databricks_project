@@ -1,9 +1,11 @@
 # Python
 __pycache__/
+*.cache
 *.pyc
 *.pyo
 *.pyd
-.logs/
+*.log
+logs/
 
 # Virtual environment
 .venv/
