@@ -13,7 +13,7 @@ from utils.gold_layer import GoldLayer
 
 @dag(
     schedule='@daily',
-    is_paused_upon_creation=False
+    is_paused_upon_creation=True
 )
 def aws_project():
 
@@ -31,7 +31,7 @@ def aws_project():
 
         for url in urls:
             fetched_data = obj.ingest_data_api(url)
-            obj.put_data_s3_hook("awss3bucketansh",f"bronze/{folder_name}/{url.split('/')[-1]}",fetched_data)
+            obj.put_data_s3_hook("aws-s3-bucket-airflow",f"bronze/{folder_name}/{url.split('/')[-1]}",fetched_data)
 
         return folder_name
 

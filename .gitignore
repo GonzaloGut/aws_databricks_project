@@ -14,3 +14,8 @@ logs/
 .env
 
 # Secrets / credentials
+gonzalo-vs_accessKeys.csv
+
+# Claude Code (personal/local)
+CLAUDE.local.md
+.claude/settings.local.json
