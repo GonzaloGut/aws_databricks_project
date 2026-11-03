@@ -16,6 +16,10 @@ logs/
 # Secrets / credentials
 gonzalo-vs_accessKeys.csv
 
+# Airflow local config (contains the Fernet key) and backups
+config/airflow.cfg
+*.bak
+
 # Claude Code (personal/local)
 CLAUDE.local.md
 .claude/settings.local.json
