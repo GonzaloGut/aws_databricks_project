@@ -9,8 +9,9 @@ class GoldLayer:
     def __init__(self):
         pass 
 
-    def trigger_databricks_job(self, job_id: int):
-        
+    def trigger_databricks_job(self, job_id: int | None = None):
+
+        job_id = job_id or int(os.environ["Databricks_JOB_ID"])
         databricks_pat = os.getenv("Databricks_PAT")
         databricks_host = os.getenv("Databricks_HOST")
         
@@ -26,5 +27,5 @@ class GoldLayer:
 
 if __name__ == "__main__":
     gold_layer = GoldLayer()
-    response = gold_layer.trigger_databricks_job(job_id=1062568820513153)  # Replace with your actual job ID
+    response = gold_layer.trigger_databricks_job()
     print(response)

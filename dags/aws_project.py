@@ -71,7 +71,7 @@ def aws_project():
     @task.python(retries=3, retry_delay=timedelta(seconds=5))
     def trigger_databricks_job():
         obj = GoldLayer()
-        response = obj.trigger_databricks_job(job_id=1062568820513153)  # Replace with your actual job ID
+        response = obj.trigger_databricks_job()
         print(response)
 
     # Task Dependency

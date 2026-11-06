@@ -39,7 +39,7 @@ After changing `requirements.txt` the image must be rebuilt (`--build`); `_PIP_A
 
 ## Configuration
 
-- `.env` (gitignored, loaded by Compose `env_file` and by `load_dotenv()` in utils) holds `AIRFLOW_UID`, `aws_access_key_id`, `aws_secret_access_key` (lowercase names), `Databricks_PAT`, `Databricks_HOST`.
-- AWS region is hardcoded to `ca-central-1`; the S3 bucket name (`aws-s3-bucket-airflow`) and Databricks job ID are hardcoded in the DAG; the bucket is also hardcoded in `glue_jobs/` and `databricks/notebooks/`, so a rename must touch all three.
+- `.env` (gitignored, loaded by Compose `env_file` and by `load_dotenv()` in utils) holds `AIRFLOW_UID`, `aws_access_key_id`, `aws_secret_access_key` (lowercase names), `Databricks_PAT`, `Databricks_HOST`, `Databricks_JOB_ID` (the job triggered by the gold task).
+- AWS region is hardcoded to `ca-central-1`; the S3 bucket name (`aws-s3-bucket-airflow`) is hardcoded in the DAG; the bucket is also hardcoded in `glue_jobs/` and `databricks/notebooks/`, so a rename must touch all three.
 - `config/airflow.cfg` is mounted to `/opt/airflow/config`; most settings are overridden by `AIRFLOW__*` env vars in `docker-compose.yaml`.
 - `gonzalo-vs_accessKeys.csv` in the repo root holds AWS credentials and is gitignored — never commit or read it into output.
